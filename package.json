@@ -1,0 +1,24 @@
+{
+  "name": "httpstatuscodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skillnter/httpstatuscodes.git"
+  },
+  "keywords": [
+    "Http",
+    "Status",
+    "Codes"
+  ],
+  "author": "Himanshu Bansal <skillhimanshubansal@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skillnter/httpstatuscodes/issues"
+  },
+  "homepage": "https://github.com/Skillnter/httpstatuscodes#readme"
+}
