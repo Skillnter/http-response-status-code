@@ -1,4 +1,4 @@
-# http-status-codes
+# http-status-codes [![Build Status](https://travis-ci.org/Skillnter/http-response-status-code.svg?branch=master)](https://travis-ci.org/Skillnter/http-response-status-code)
 
 All HTTP Status Codes.
 
