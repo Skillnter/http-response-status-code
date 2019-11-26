@@ -1,7 +1,7 @@
 {
   "name": "http-response-status-code",
   "version": "1.0.5",
-  "description": "",
+  "description": "Package include all Official HTTP Status Codes",
   "main": "index.js",
   "scripts": {
     "test": "mocha"

@@ -13,6 +13,7 @@
             STATUS_CODES[MODULE.CONTINUE = 100] = "Continue";
             STATUS_CODES[MODULE.SWITCHING_PROTOCOLS = 101] = "Switching Protocols";
             STATUS_CODES[MODULE.PROCESSING = 102] = "Processing";
+            STATUS_CODES[MODULE.EARLY_HINTS = 103] = "Early Hints";
 
             STATUS_CODES[MODULE.OK = 200] = "OK";
             STATUS_CODES[MODULE.CREATED = 201] = "Created";
@@ -22,6 +23,8 @@
             STATUS_CODES[MODULE.RESET_CONTENT = 205] = "Reset Content";
             STATUS_CODES[MODULE.PARTIAL_CONTENT = 206] = "Partial Content";
             STATUS_CODES[MODULE.MULTI_STATUS = 207] = "Multi-Status";
+            STATUS_CODES[MODULE.ALREADY_REPORTED = 208] = "Already Reported";
+            STATUS_CODES[MODULE.IM_USED = 226] = "IM Used";
 
             STATUS_CODES[MODULE.MULTIPLE_CHOICES = 300] = "Multiple Choices";
             STATUS_CODES[MODULE.MOVED_PERMANENTLY = 301] = "Moved Permanently";
@@ -59,6 +62,7 @@
             STATUS_CODES[MODULE.PRECONDITION_REQUIRED = 428] = "Precondition Required";
             STATUS_CODES[MODULE.TOO_MANY_REQUESTS = 429] = "Too Many Requests";
             STATUS_CODES[MODULE.REQUEST_HEADER_FIELDS_TOO_LARGE = 431] = "Request Header Fields Too Large";
+            STATUS_CODES[MODULE.UNAVAILABLE_FOR_LEGAL_REASONS = 451] = "Unavailable For Legal Reasons";
 
             STATUS_CODES[MODULE.INTERNAL_SERVER_ERROR = 500] = "Server Error";
             STATUS_CODES[MODULE.NOT_IMPLEMENTED = 501] = "Not Implemented";
