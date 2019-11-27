@@ -1,5 +1,5 @@
 {
-  "name": "http-response-status-code",
+  "name": "http-response-status-code",//"name": "@skillnter/http-response-status-code
   "version": "1.0.5",
   "description": "Package include all Official HTTP Status Codes",
   "main": "index.js",
