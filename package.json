@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Skillnter/http-statuscodes.git"
+    "url": "git+https://github.com/Skillnter/http-response-status-code.git"
   },
   "keywords": [
     "Http",
@@ -19,10 +19,14 @@
   "author": "Himanshu Bansal <skillhimanshubansal@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Skillnter/http-statuscodes/issues"
+    "url": "https://github.com/Skillnter/http-response-status-code/issues"
   },
-  "homepage": "https://github.com/Skillnter/http-statuscodes#readme",
+  "homepage": "https://github.com/Skillnter/http-response-status-code#readme",
   "devDependencies": {
     "mocha": "^6.2.2"
-  }
+  },
+  "publishConfig": { 
+	  "registry": "https://npm.pkg.github.com/",
+	  "name": "@skillnter/http-response-status-code"
+	}
 }
