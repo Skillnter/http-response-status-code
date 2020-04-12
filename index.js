@@ -102,7 +102,7 @@
                 if(STATUS_CODES.hasOwnProperty(code)){
                     let keys = Object.keys(MODULE);
                     for(let i = 0; i < keys.length; i++){
-                        if(MODULE[keys[i]] == code){
+                        if(MODULE[keys[i]].toUpperCase() == code.toUpperCase()){
                             return keys[i];
                         }
                     }
