@@ -1,6 +1,6 @@
 # http-response-status-codes 
 
-[![Build Status](https://travis-ci.org/Skillnter/http-response-status-code.svg?branch=master)](https://travis-ci.org/Skillnter/http-response-status-code) [![npm version](https://badge.fury.io/js/http-response-status-code.svg)](https://badge.fury.io/js/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/Skillnter/http-response-status-code)]()   [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)]() [![Snyk IO](https://snyk.io/test/github/Skillnter/http-response-status-code)]()
+[![Build Status](https://travis-ci.org/Skillnter/http-response-status-code.svg?branch=master)](https://travis-ci.org/Skillnter/http-response-status-code) [![npm version](https://badge.fury.io/js/http-response-status-code.svg)](https://badge.fury.io/js/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/Skillnter/http-response-status-code)]()   [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)]() [![Snyk IO](https://snyk.io/test/github/Skillnter/http-response-status-code/badge.svg)]()
 
 All HTTP Status Codes.
 
