@@ -95,14 +95,14 @@
             /**
              * Represents a function.
              * @function getStatusName
-             * @param {string} code - The Status Code Number.
+             * @param {number} code - The Status Code Number.
              * @returns {string}
              */
             MODULE.getStatusName = function(code){
                 if(STATUS_CODES.hasOwnProperty(code)){
                     let keys = Object.keys(MODULE);
                     for(let i = 0; i < keys.length; i++){
-                        if(MODULE[keys[i]].toUpperCase() == code.toUpperCase()){
+                        if(MODULE[keys[i]] == code){
                             return keys[i];
                         }
                     }
@@ -116,7 +116,7 @@
             /**
              * Represents a function.
              * @function getStatusDescription
-             * @param {string} code - The Status Code Number.
+             * @param {number} code - The Status Code Number.
              * @returns {string}
              */
             MODULE.getStatusDescription = function(code){
