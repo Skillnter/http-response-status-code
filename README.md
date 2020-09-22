@@ -1,6 +1,7 @@
 # http-response-status-codes 
 
 [![Build Status](https://travis-ci.org/Skillnter/http-response-status-code.svg?branch=master)](https://travis-ci.org/Skillnter/http-response-status-code) [![npm version](https://badge.fury.io/js/http-response-status-code.svg)](https://badge.fury.io/js/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/Skillnter/http-response-status-code)]()   [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)]()
+[![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
 
 All HTTP Status Codes.
 
