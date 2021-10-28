@@ -1,5 +1,5 @@
 var assert = require('assert');
-var STATUS_CODES = require('../index');
+var STATUS_CODES = require('../index.js');
 describe('status_code', function() {
     it('print status code', function () {
         var result = STATUS_CODES.OK;

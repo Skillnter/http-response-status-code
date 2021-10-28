@@ -3,8 +3,11 @@
   "version": "1.0.5",
   "description": "Package include all Official HTTP Status Codes",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "tsc",
+    "coveralls": "jscoverage lib && COVERAGE=xQd4CAdT82hnSnpTSoKF5oz8osGD87rP0 nodeunit --reporter=lcov test | coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,10 +26,11 @@
   },
   "homepage": "https://github.com/Skillnter/http-response-status-code#readme",
   "devDependencies": {
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "typescript": "^4.4.4"
   },
-  "publishConfig": { 
-	  "registry": "https://npm.pkg.github.com/",
-	  "name": "@skillnter/http-response-status-code"
-	}
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "name": "@skillnter/http-response-status-code"
+  }
 }
