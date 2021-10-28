@@ -36,6 +36,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+#dist directory
+dist/
+
 # TypeScript v1 declaration files
 typings/
 
@@ -61,3 +64,4 @@ typings/
 .next
 
 .coveralls.yml
+package-lock.json
