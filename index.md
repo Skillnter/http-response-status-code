@@ -21,7 +21,7 @@ console.log(STATUS_CODES.getStatusName(STATUS_CODES.OK));
 // OK
 
 console.log(STATUS_CODES.getStatusDescription(STATUS_CODES.INTERNAL_SERVER_ERROR));
-// Server Error
+// Internal Server Error
 
 console.log(STATUS_CODES.getStatusCode("IM_A_TEAPOT"));
 // 418
