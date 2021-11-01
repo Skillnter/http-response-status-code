@@ -108,6 +108,6 @@ res.status(STATUS_CODES.getStatusCode("NOT_FOUND")).sendFile('/absolute/path/to/
 
 ## License
 
-- `BITCOIN OP_RETURN CACHING` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal].
+- `http-response-status-codes` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal].
 
 [Himanshu Bansal]: https://github.com/Skillnter/
