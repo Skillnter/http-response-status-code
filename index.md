@@ -1,4 +1,4 @@
-# http-response-status-codes 
+# http-response-status-code 
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
@@ -108,6 +108,6 @@ res.status(STATUS_CODES.getStatusCode("NOT_FOUND")).sendFile('/absolute/path/to/
 
 ## License
 
-- `http-response-status-codes` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal].
+- `http-response-status-code` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal].
 
 [Himanshu Bansal]: https://github.com/Skillnter/
