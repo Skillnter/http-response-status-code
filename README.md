@@ -2,9 +2,8 @@
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-[![Build Status](https://travis-ci.org/Skillnter/http-response-status-code.svg?branch=master)](https://travis-ci.org/Skillnter/http-response-status-code) [![npm version](https://badge.fury.io/js/http-response-status-code.svg)](https://badge.fury.io/js/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/Skillnter/http-response-status-code)]()   [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)]()
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/skillnter/http-response-status-code/Test%20Pull%20Requests) [![npm version](https://badge.fury.io/js/http-response-status-code.svg)](https://badge.fury.io/js/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/Skillnter/http-response-status-code)]()   [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)]() [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage)
 [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
-
 
 ## Installation
 
@@ -104,10 +103,10 @@ res.status(STATUS_CODES.getStatusCode("NOT_FOUND")).sendFile('/absolute/path/to/
 
 ## People
 
-- The original author of the project is [Himanshu Bansal](https://github.com/Skillnter)
+The original author of the project is [Himanshu Bansal][skillnter]
 
 ## License
 
-- `http-response-status-code` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal].
+`http-response-status-code` project is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal][skillnter].
 
-[Himanshu Bansal]: https://github.com/Skillnter/
+[skillnter]: https://github.com/Skillnter/
