@@ -1,4 +1,4 @@
-# http-response-status-code 
+# http-response-status-code
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
