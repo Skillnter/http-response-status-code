@@ -158,7 +158,7 @@ STATUS_CODES[MODULE.NETWORK_AUTHENTICATION_REQUIRED = MODULE.CODES.HTTP_CODE_511
  * @returns {number}
  */
 MODULE.getStatusCode = function (name) {
-    if (Object.prototype.hasOwnProperty.call(MODULE, "".concat(name)) && name !== 'CODES') {
+    if (Object.prototype.hasOwnProperty.call(MODULE, "".concat(name)) && name !== "CODES") {
         return MODULE["".concat(name)];
     }
     else {
@@ -177,7 +177,7 @@ MODULE.getStatusName = function (code) {
     if (Object.prototype.hasOwnProperty.call(STATUS_CODES, "".concat(code))) {
         var keys = Object.keys(MODULE);
         for (var i = 0; i < keys.length; i++) {
-            if (keys[parseInt("".concat(i))] !== 'CODES' && MODULE[keys[parseInt("".concat(i))]] === code) {
+            if (keys[parseInt("".concat(i))] !== "CODES" && MODULE[keys[parseInt("".concat(i))]] === code) {
                 return keys[parseInt("".concat(i))];
             }
         }

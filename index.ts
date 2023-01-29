@@ -165,7 +165,7 @@
              * @returns {number}
              */
             MODULE.getStatusCode = function(name:string){
-                if(Object.prototype.hasOwnProperty.call(MODULE, `${name}`) && name !== 'CODES'){
+                if(Object.prototype.hasOwnProperty.call(MODULE, `${name}`) && name !== "CODES"){
                     return MODULE[`${name}`];
                 }else{
                     throw new Error(`Status code does not exist: ${name}`);
@@ -184,7 +184,7 @@
                 if(Object.prototype.hasOwnProperty.call(STATUS_CODES, `${code}`)){
                     const keys = Object.keys(MODULE);
                     for(let i = 0; i < keys.length; i++){
-                        if(keys[parseInt(`${i}`)] !== 'CODES' && MODULE[keys[parseInt(`${i}`)]] === code){
+                        if(keys[parseInt(`${i}`)] !== "CODES" && MODULE[keys[parseInt(`${i}`)]] === code){
                             return keys[parseInt(`${i}`)];
                         }
                     }
