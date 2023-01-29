@@ -67,3 +67,4 @@ typings/
 package-lock.json
 .npmrc
 .nyc_output/
+.eslintrc.json

@@ -5,8 +5,10 @@
 /** ----- STATUS CODE MODULE | START ----- **/
 
         /* ----- INITIALIZING VARIABLE CONSTRUCTOR | START ------ */
-            var MODULE: any = {};
-            var STATUS_CODES: any = {};
+            // eslint-disable-next-line
+            const MODULE: any = {};
+            // eslint-disable-next-line
+            const STATUS_CODES: any = {};
         /* ----- INITIALIZING VARIABLE CONSTRUCTOR | STOP ------ */
 
         /* ----- VARIABLE VALUES | START ------ */
@@ -86,53 +88,53 @@
 
         /* ------ GET STATUS CODE | FROM NAME | START ------ */
             /**
-             * Represents a function.
-             * @function getStatusCode
+             * Returns the HTTP status code from code name.
+             * @name getStatusCode
              * @param {string} name - The name of the Status code.
              * @returns {number}
              */
             MODULE.getStatusCode = function(name:string){
-                if(MODULE.hasOwnProperty(name)){
-                    return MODULE[name];
+                if(Object.prototype.hasOwnProperty.call(MODULE, `${name}`)){
+                    return MODULE[`${name}`];
                 }else{
-                    throw new Error("Status code does not exist: "+ name);
+                    throw new Error(`Status code does not exist: ${name}`);
                 }
             };
         /* ------ GET STATUS CODE | FROM NAME | STOP ------ */
 
         /* ------ GET NAME | FROM STATUS CODE | START ------ */
             /**
-             * Represents a function.
-             * @function getStatusName
+             * Returns the status name from HTTP status code.
+             * @name getStatusName
              * @param {number} code - The Status Code Number.
              * @returns {string}
              */
             MODULE.getStatusName = function(code:number){
-                if(STATUS_CODES.hasOwnProperty(code)){
-                    let keys = Object.keys(MODULE);
+                if(Object.prototype.hasOwnProperty.call(STATUS_CODES, `${code}`)){
+                    const keys = Object.keys(MODULE);
                     for(let i = 0; i < keys.length; i++){
-                        if(MODULE[keys[i]] == code){
-                            return keys[i];
+                        if(MODULE[keys[parseInt(`${i}`)]] === code){
+                            return keys[parseInt(`${i}`)];
                         }
                     }
                 }else{
-                    throw new Error("Status code does not exist: "+ name);
+                    throw new Error(`Status code does not exist: ${name}`);
                 }
             };
         /* ------ GET NAME | FROM STATUS CODE | STOP ------ */
 
         /* ------ GET DESCRIPTION | FROM CODE | START ------ */
             /**
-             * Represents a function.
-             * @function getStatusDescription
+             * Returns the status description from HTTP status code.
+             * @name getStatusDescription
              * @param {number} code - The Status Code Number.
              * @returns {string}
              */
             MODULE.getStatusDescription = function(code:number){
-                if(STATUS_CODES.hasOwnProperty(code)){
-                    return STATUS_CODES[code];
+                if(Object.prototype.hasOwnProperty.call(STATUS_CODES, `${code}`)){
+                    return STATUS_CODES[`${code}`];
                 }else{
-                    throw new Error("Status code does not exist: "+ code);
+                    throw new Error(`Status code does not exist: ${code}`);
                 }
             };
         /* ------ GET DESCRIPTION | FROM CODE | STOP ------ */

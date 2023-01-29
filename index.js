@@ -5,7 +5,9 @@
  */
 /** ----- STATUS CODE MODULE | START ----- **/
 /* ----- INITIALIZING VARIABLE CONSTRUCTOR | START ------ */
+// eslint-disable-next-line
 var MODULE = {};
+// eslint-disable-next-line
 var STATUS_CODES = {};
 /* ----- INITIALIZING VARIABLE CONSTRUCTOR | STOP ------ */
 /* ----- VARIABLE VALUES | START ------ */
@@ -78,54 +80,54 @@ STATUS_CODES[MODULE.NETWORK_AUTHENTICATION_REQUIRED = 511] = "Network Authentica
 /* ----- VARIABLE VALUES | STOP ------ */
 /* ------ GET STATUS CODE | FROM NAME | START ------ */
 /**
- * Represents a function.
- * @function getStatusCode
+ * Returns the HTTP status code from code name.
+ * @name getStatusCode
  * @param {string} name - The name of the Status code.
  * @returns {number}
  */
 MODULE.getStatusCode = function (name) {
-    if (MODULE.hasOwnProperty(name)) {
-        return MODULE[name];
+    if (Object.prototype.hasOwnProperty.call(MODULE, "".concat(name))) {
+        return MODULE["".concat(name)];
     }
     else {
-        throw new Error("Status code does not exist: " + name);
+        throw new Error("Status code does not exist: ".concat(name));
     }
 };
 /* ------ GET STATUS CODE | FROM NAME | STOP ------ */
 /* ------ GET NAME | FROM STATUS CODE | START ------ */
 /**
- * Represents a function.
- * @function getStatusName
+ * Returns the status name from HTTP status code.
+ * @name getStatusName
  * @param {number} code - The Status Code Number.
  * @returns {string}
  */
 MODULE.getStatusName = function (code) {
-    if (STATUS_CODES.hasOwnProperty(code)) {
+    if (Object.prototype.hasOwnProperty.call(STATUS_CODES, "".concat(code))) {
         var keys = Object.keys(MODULE);
         for (var i = 0; i < keys.length; i++) {
-            if (MODULE[keys[i]] == code) {
-                return keys[i];
+            if (MODULE[keys[parseInt("".concat(i))]] === code) {
+                return keys[parseInt("".concat(i))];
             }
         }
     }
     else {
-        throw new Error("Status code does not exist: " + name);
+        throw new Error("Status code does not exist: ".concat(name));
     }
 };
 /* ------ GET NAME | FROM STATUS CODE | STOP ------ */
 /* ------ GET DESCRIPTION | FROM CODE | START ------ */
 /**
- * Represents a function.
- * @function getStatusDescription
+ * Returns the status description from HTTP status code.
+ * @name getStatusDescription
  * @param {number} code - The Status Code Number.
  * @returns {string}
  */
 MODULE.getStatusDescription = function (code) {
-    if (STATUS_CODES.hasOwnProperty(code)) {
-        return STATUS_CODES[code];
+    if (Object.prototype.hasOwnProperty.call(STATUS_CODES, "".concat(code))) {
+        return STATUS_CODES["".concat(code)];
     }
     else {
-        throw new Error("Status code does not exist: " + code);
+        throw new Error("Status code does not exist: ".concat(code));
     }
 };
 /* ------ GET DESCRIPTION | FROM CODE | STOP ------ */
