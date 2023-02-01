@@ -26,8 +26,10 @@
   },
   "homepage": "https://github.com/Skillnter/http-response-status-code#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "eslint-plugin-security": "^1.7.0",
     "istanbul": "^0.4.5",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "typescript": "^4.4.4"
   },
