@@ -21,6 +21,14 @@ describe("status_code", function() {
         var result = STATUS_CODES.CODES.HTTP_CODE_200;
         assert.equal(result, 200);
     });
+    it("Should throw error when any of the SKIP_LIST element is passed", function () {
+        const SKIP_LIST = ['CODES', 'getStatusCode', 'getStatusName', 'getStatusDescription'];
+        for (let key of SKIP_LIST) {
+            assert.throws(() => {
+                STATUS_CODES.getStatusDescription(key);
+            }, Error);
+        }
+    });
     it("Should throw error when getStatusDescription get wrong code", function () {
         assert.throws(() => {STATUS_CODES.getStatusDescription(0);}, Error);
     });

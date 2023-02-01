@@ -81,6 +81,8 @@ var MODULE = {
 };
 // eslint-disable-next-line
 var STATUS_CODES = {};
+// eslint-disable-next-line
+var SKIP_LIST = ['CODES', 'getStatusCode', 'getStatusName', 'getStatusDescription'];
 /* ----- INITIALIZING VARIABLE CONSTRUCTOR | STOP ------ */
 /* ----- VARIABLE VALUES | START ------ */
 STATUS_CODES[MODULE.CONTINUE = MODULE.CODES.HTTP_CODE_100] = "Continue";
@@ -158,7 +160,7 @@ STATUS_CODES[MODULE.NETWORK_AUTHENTICATION_REQUIRED = MODULE.CODES.HTTP_CODE_511
  * @returns {number}
  */
 MODULE.getStatusCode = function (name) {
-    if (Object.prototype.hasOwnProperty.call(MODULE, "".concat(name)) && name !== "CODES") {
+    if (Object.prototype.hasOwnProperty.call(MODULE, "".concat(name)) && !SKIP_LIST.some(function (element) { return element === "".concat(name); })) {
         return MODULE["".concat(name)];
     }
     else {
@@ -175,11 +177,16 @@ MODULE.getStatusCode = function (name) {
  */
 MODULE.getStatusName = function (code) {
     if (Object.prototype.hasOwnProperty.call(STATUS_CODES, "".concat(code))) {
-        var keys = Object.keys(MODULE);
-        for (var i = 0; i < keys.length; i++) {
-            if (keys[parseInt("".concat(i))] !== "CODES" && MODULE[keys[parseInt("".concat(i))]] === code) {
-                return keys[parseInt("".concat(i))];
+        var keys_1 = Object.keys(MODULE);
+        var _loop_1 = function (i) {
+            if (!SKIP_LIST.some(function (element) { return element === keys_1[parseInt("".concat(i))]; }) && MODULE[keys_1[parseInt("".concat(i))]] === code) {
+                return { value: keys_1[parseInt("".concat(i))] };
             }
+        };
+        for (var i = 0; i < keys_1.length; i++) {
+            var state_1 = _loop_1(i);
+            if (typeof state_1 === "object")
+                return state_1.value;
         }
     }
     else {
