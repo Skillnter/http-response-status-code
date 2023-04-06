@@ -2,7 +2,7 @@
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml) [![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/http-response-status-code) ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen) ![npm](https://img.shields.io/npm/dy/http-response-status-code) [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml) [![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/http-response-status-code) ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen) ![npm](https://img.shields.io/npm/dy/http-response-status-code) [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
 
 ## Installation
 
@@ -116,6 +116,15 @@ res.status(STATUS_CODES.CODES.HTTP_CODE_404).sendFile('/absolute/path/to/404.png
 ## People
 
 The original author of the project is [Himanshu Bansal][skillnter]
+
+## Donations
+**This is all voluntary work**, so if you want to support my efforts you can [buy me a coffee](https://www.buymeacoffee.com/skillnter) or [paypal](https://www.paypal.me/skillnte). 
+
+You can also use the following:
+
+![BTC: 1FhSiNPB3ksxZh7YTdRA2ctpFu3zw7iJCp](https://img.shields.io/badge/BTC-1FhSiNPB3ksxZh7YTdRA2ctpFu3zw7iJCp-brightgreen)
+
+![ETH: 0x24f40e9e15960ed397cca22709f6e616d5b76ff7](https://img.shields.io/badge/ETH-0x24f40e9e15960ed397cca22709f6e616d5b76ff7-brightgreen)
 
 ## License
 
