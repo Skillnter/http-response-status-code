@@ -82,7 +82,7 @@ var MODULE = {
 // eslint-disable-next-line
 var STATUS_CODES = {};
 // eslint-disable-next-line
-var SKIP_LIST = ['CODES', 'getStatusCode', 'getStatusName', 'getStatusDescription'];
+var SKIP_LIST = ["CODES", "getStatusCode", "getStatusName", "getStatusDescription"];
 /* ----- INITIALIZING VARIABLE CONSTRUCTOR | STOP ------ */
 /* ----- VARIABLE VALUES | START ------ */
 STATUS_CODES[MODULE.CONTINUE = MODULE.CODES.HTTP_CODE_100] = "Continue";
@@ -190,7 +190,7 @@ MODULE.getStatusName = function (code) {
         }
     }
     else {
-        throw new Error("Status code does not exist: ".concat(name));
+        throw new Error("Status code does not exist: ".concat(code));
     }
 };
 /* ------ GET NAME | FROM STATUS CODE | STOP ------ */

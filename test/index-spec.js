@@ -22,7 +22,7 @@ describe("status_code", function() {
         assert.equal(result, 200);
     });
     it("Should throw error when any of the SKIP_LIST element is passed", function () {
-        const SKIP_LIST = ['CODES', 'getStatusCode', 'getStatusName', 'getStatusDescription'];
+        const SKIP_LIST = ["CODES", "getStatusCode", "getStatusName", "getStatusDescription"];
         for (let key of SKIP_LIST) {
             assert.throws(() => {
                 STATUS_CODES.getStatusDescription(key);
