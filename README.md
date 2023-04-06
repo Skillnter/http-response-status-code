@@ -15,7 +15,7 @@ npm install http-response-status-code
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
 // OR
-import * as STATUS_CODE from 'http-response-status-code';
+import * as STATUS_CODES from 'http-response-status-code';
 
 console.log(STATUS_CODES.getStatusName(STATUS_CODES.OK));
 // OK

@@ -81,7 +81,7 @@
             // eslint-disable-next-line
             const STATUS_CODES: any = {};
             // eslint-disable-next-line
-            const SKIP_LIST: any[] = ['CODES', 'getStatusCode', 'getStatusName', 'getStatusDescription'];
+            const SKIP_LIST: any[] = ["CODES", "getStatusCode", "getStatusName", "getStatusDescription"];
         /* ----- INITIALIZING VARIABLE CONSTRUCTOR | STOP ------ */
 
         /* ----- VARIABLE VALUES | START ------ */
@@ -167,7 +167,7 @@
              * @returns {number}
              */
             MODULE.getStatusCode = function(name:string){
-                if(Object.prototype.hasOwnProperty.call(MODULE, `${name}`) && !SKIP_LIST.some(element => element === `${name}`)){
+                if(Object.prototype.hasOwnProperty.call(MODULE, `${name}`) && !SKIP_LIST.some((element) => element === `${name}`)){
                     return MODULE[`${name}`];
                 }else{
                     throw new Error(`Status code does not exist: ${name}`);
@@ -186,12 +186,12 @@
                 if(Object.prototype.hasOwnProperty.call(STATUS_CODES, `${code}`)){
                     const keys = Object.keys(MODULE);
                     for(let i = 0; i < keys.length; i++){
-                        if(!SKIP_LIST.some(element => element === keys[parseInt(`${i}`)]) && MODULE[keys[parseInt(`${i}`)]] === code){
+                        if(!SKIP_LIST.some((element) => element === keys[parseInt(`${i}`)]) && MODULE[keys[parseInt(`${i}`)]] === code){
                             return keys[parseInt(`${i}`)];
                         }
                     }
                 }else{
-                    throw new Error(`Status code does not exist: ${name}`);
+                    throw new Error(`Status code does not exist: ${code}`);
                 }
             };
         /* ------ GET NAME | FROM STATUS CODE | STOP ------ */
