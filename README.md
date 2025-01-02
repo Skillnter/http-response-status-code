@@ -1,8 +1,32 @@
-# http-response-status-code
+# HTTP Response Status Code
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml) [![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/http-response-status-code) ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen) ![npm](https://img.shields.io/npm/dy/http-response-status-code) [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
+
+## Table of Content
+
+- [Installation](#installation)
+- [Usage](#usage-example)
+- [Toolset Overview](#toolset-overview)
+  - [1. Get Status Code](#1-get-status-code)
+  - [2. Get Status Name](#2-get-status-name)
+  - [3. Get Status Description](#3-get-status-description)
+  - [4. Informational Code Check](#4-informational-code-check)
+  - [5. List Informational Codes](#5-list-informational-codes)
+  - [6. Success Code Check](#6-success-code-check)
+  - [7. List Success Codes](#7-list-success-codes)
+  - [8. Redirectional Code Check](#8-redirectional-code-check)
+  - [9. List Redirectional Codes](#9-list-redirectional-codes)
+  - [10. Client Error Code Check](#10-client-error-code-check)
+  - [11. List Client Side Error Codes](#11-list-client-side-error-codes)
+  - [12. Server Error Code Check](#12-server-error-code-check)
+  - [13. List Server Side Error Codes](#13-list-server-side-error-codes)
+  - [14. Valid Code Check](#14-valid-code-check)
+- [Status Codes](#status-codes)
+- [People](#people)
+- [Donations](#donations)
+- [License](#license)
 
 ## Installation
 
@@ -41,6 +65,269 @@ res.status(STATUS_CODES.CODES.HTTP_CODE_400).send(STATUS_CODES.getStatusDescript
 res.status(STATUS_CODES.getStatusCode("NOT_FOUND")).sendFile('/absolute/path/to/404.png');
 // OR
 res.status(STATUS_CODES.CODES.HTTP_CODE_404).sendFile('/absolute/path/to/404.png');
+```
+
+## Toolset Overview
+
+### 1. Get Status Code
+
+Returns the HTTP status code from status code name.
+
+#### Parameters
+
+- `name` (`String`): The name of the status code.
+
+#### Returns
+
+- `code` (`number`): The code number of the status if successful.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getStatusCode("IM_A_TEAPOT")); // 418
+```
+
+### 2. Get Status Name
+
+Returns the HTTP status code name from status code.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `name` (`String`): The name of the status code if successful.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getStatusName(418)); // "IM_A_TEAPOT"
+```
+
+### 3. Get Status Description
+
+Returns the status description from HTTP status code.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `name` (`String`): The description of the status code if successful.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getStatusDescription(500)); // "Internal Server Error"
+```
+
+### 4. Informational Code Check
+
+Determines whether the specified status code represents an informational status.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is informational, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isInformational(100)); // True
+console.log(STATUS_CODES.isInformational(200)); // False
+```
+
+### 5. List Informational Codes
+
+Returns all the informational HTTP status codes.
+
+#### Returns
+
+- `result` (`number[]`): An array of all the informational HTTP status codes.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getInformationalCodes()); // [100, 101, ...]
+```
+
+### 6. Success Code Check
+
+Determines whether the specified status code represents a success status.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is success status, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isSuccess(200)); // True
+console.log(STATUS_CODES.isSuccess(100)); // False
+```
+
+### 7. List Success Codes
+
+Returns all the success HTTP status codes.
+
+#### Returns
+
+- `result` (`number[]`): An array of all the success HTTP status codes.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getSuccessCodes()); // [200, 201, ...]
+```
+
+### 8. Redirectional Code Check
+
+Determines whether the specified status code represents a redirectional status.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is redirectional status, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isRedirectional(300)); // True
+console.log(STATUS_CODES.isRedirectional(100)); // False
+```
+
+### 9. List Redirectional Codes
+
+Returns all the redirectional HTTP status codes.
+
+#### Returns
+
+- `result` (`number[]`): An array of all the redirectional HTTP status codes.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getRedirectionalCodes()); // [300, 301, ...]
+```
+
+### 10. Client Error Code Check
+
+Determines whether the specified status code represents a client side error status.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is client side error status, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isClientError(400)); // True
+console.log(STATUS_CODES.isClientError(100)); // False
+```
+
+### 11. List Client Side Error Codes
+
+Returns all the client side error HTTP status codes.
+
+#### Returns
+
+- `result` (`number[]`): An array of all the client side error HTTP status codes.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.getClientErrorCodes()); // [400, 401, ...]
+```
+
+### 12. Server Error Code Check
+
+Determines whether the specified status code represents a server side error status.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is server side error status, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isServerError(500)); // True
+console.log(STATUS_CODES.isServerError(100)); // False
+```
+
+### 13. List Server Side Error Codes
+
+Returns all the server side error HTTP status codes.
+
+#### Returns
+
+- `result` (`number[]`): An array of all the server side error HTTP status codes.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isServerError()); // [500, 501, ...]
+```
+
+### 14. Valid Code Check
+
+Validates whether the provided status code is recognized as valid.
+
+#### Parameters
+
+- `code` (`number`): The code number of the status.
+
+#### Returns
+
+- `result` (`boolean`): True if the status code is valid status, false otherwise.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.isValidStatusCode(500)); // True
+console.log(STATUS_CODES.isValidStatusCode(999)); // False
 ```
 
 ## Status Codes
@@ -118,13 +405,14 @@ res.status(STATUS_CODES.CODES.HTTP_CODE_404).sendFile('/absolute/path/to/404.png
 The original author of the project is [Himanshu Bansal][skillnter]
 
 ## Donations
+
 **This is all voluntary work**, so if you want to support my efforts you can [buy me a coffee](https://www.buymeacoffee.com/skillnter) or [paypal](https://www.paypal.me/skillnte). 
 
 You can also use the following:
 
-![BTC: 1FhSiNPB3ksxZh7YTdRA2ctpFu3zw7iJCp](https://img.shields.io/badge/BTC-1FhSiNPB3ksxZh7YTdRA2ctpFu3zw7iJCp-brightgreen)
+![BTC: qzqmpxux3m56qqhz465u8022q9z63w2sysq4u9ltwj](https://img.shields.io/badge/BTC-qzqmpxux3m56qqhz465u8022q9z63w2sysq4u9ltwj-brightgreen)
 
-![ETH: 0x24f40e9e15960ed397cca22709f6e616d5b76ff7](https://img.shields.io/badge/ETH-0x24f40e9e15960ed397cca22709f6e616d5b76ff7-brightgreen)
+![ETH: 0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889](https://img.shields.io/badge/ETH-0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889-brightgreen)
 
 ## License
 
