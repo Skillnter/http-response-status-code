@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --recursive",
     "build": "tsc",
     "coverage": "nyc --reporter=text-summary --reporter=lcov npm run test"
   },
