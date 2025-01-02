@@ -82,7 +82,7 @@ Returns the HTTP status code from status code name.
 - `code` (`number`): The code number of the status if successful.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][getStatusCode])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -102,7 +102,7 @@ Returns the HTTP status code name from status code.
 - `name` (`String`): The name of the status code if successful.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][getStatusName])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -122,7 +122,7 @@ Returns the status description from HTTP status code.
 - `name` (`String`): The description of the status code if successful.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][getStatusDescription])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -142,7 +142,7 @@ Determines whether the specified status code represents an informational status.
 - `result` (`boolean`): True if the status code is informational, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isInformational])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -158,7 +158,7 @@ Returns all the informational HTTP status codes.
 
 - `result` (`number[]`): An array of all the informational HTTP status codes.
 
-### Example
+### Example ([Stackblitz][getInformationalCodes])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -178,7 +178,7 @@ Determines whether the specified status code represents a success status.
 - `result` (`boolean`): True if the status code is success status, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isSuccess])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -194,7 +194,7 @@ Returns all the success HTTP status codes.
 
 - `result` (`number[]`): An array of all the success HTTP status codes.
 
-### Example
+### Example ([Stackblitz][getSuccessCodes])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -214,7 +214,7 @@ Determines whether the specified status code represents a redirectional status.
 - `result` (`boolean`): True if the status code is redirectional status, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isRedirectional])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -230,7 +230,7 @@ Returns all the redirectional HTTP status codes.
 
 - `result` (`number[]`): An array of all the redirectional HTTP status codes.
 
-### Example
+### Example ([Stackblitz][getRedirectionalCodes])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -250,7 +250,7 @@ Determines whether the specified status code represents a client side error stat
 - `result` (`boolean`): True if the status code is client side error status, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isClientError])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -266,7 +266,7 @@ Returns all the client side error HTTP status codes.
 
 - `result` (`number[]`): An array of all the client side error HTTP status codes.
 
-### Example
+### Example ([Stackblitz][getClientErrorCodes])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -286,7 +286,7 @@ Determines whether the specified status code represents a server side error stat
 - `result` (`boolean`): True if the status code is server side error status, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isServerError])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -302,11 +302,11 @@ Returns all the server side error HTTP status codes.
 
 - `result` (`number[]`): An array of all the server side error HTTP status codes.
 
-### Example
+### Example ([Stackblitz][getServerErrorCodes])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
-console.log(STATUS_CODES.isServerError()); // [500, 501, ...]
+console.log(STATUS_CODES.getServerErrorCodes()); // [500, 501, ...]
 ```
 
 ### 14. Valid Code Check
@@ -322,7 +322,7 @@ Validates whether the provided status code is recognized as valid.
 - `result` (`boolean`): True if the status code is valid status, false otherwise.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
-### Example
+### Example ([Stackblitz][isValidStatusCode])
 
 ```javascript
 var STATUS_CODES = require('http-response-status-code');
@@ -420,3 +420,17 @@ You can also use the following:
 
 [skillnter]: https://github.com/Skillnter/
 [runkit]: https://runkit.com/skillnter/http-response-status-code/
+[getStatusCode]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL5
+[getStatusName]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL11
+[getStatusDescription]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL17
+[isInformational]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL22
+[getInformationalCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL33
+[isSuccess]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL36
+[getSuccessCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL43
+[isRedirectional]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL48
+[getRedirectionalCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL59
+[isClientError]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL65
+[getClientErrorCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL76
+[isServerError]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL82
+[getServerErrorCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL93
+[isValidStatusCode]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL98
