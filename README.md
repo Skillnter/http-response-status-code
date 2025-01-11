@@ -2,7 +2,20 @@
 
 All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml) [![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code) [![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/http-response-status-code) ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen) ![npm](https://img.shields.io/npm/dy/http-response-status-code) [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/skillnte)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml)
+[![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code)
+[![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://www.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Skillnter/http-response-status-code&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen)
+![npm](https://img.shields.io/npm/dy/http-response-status-code)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?logo=github&logoColor=white)](https://skillnter.github.io/http-response-status-code/)
+[![Github Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-30363D?&logo=GitHub-Sponsors&logoColor=EA4AAA)](https://github.com/sponsors/Skillnter)
+[![Open Collective](https://img.shields.io/badge/Open%20Collective-3385FF?logo=open-collective&logoColor=white)](https://opencollective.com/http-response-status-code)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/skillnter)
+[![Patreon](https://img.shields.io/badge/Patreon-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/skillnter)
+[![PayPal](https://img.shields.io/badge/PayPal-003087?logo=paypal&logoColor=fff)](https://www.paypal.me/skillnte)
 
 ## Table of Content
 
@@ -406,7 +419,13 @@ The original author of the project is [Himanshu Bansal][skillnter]
 
 ## Donations
 
-**This is all voluntary work**, so if you want to support my efforts you can [buy me a coffee](https://www.buymeacoffee.com/skillnter) or [paypal](https://www.paypal.me/skillnte). 
+**This is all voluntary work**, so if you want to support my efforts you can 
+
+- [Buy Me A Coffee](https://www.buymeacoffee.com/skillnter)
+- [Paypal](https://www.paypal.me/skillnte)
+- [GitHub Sponsor](https://github.com/sponsors/Skillnter)
+- [Patreon](https://www.patreon.com/skillnter)
+- [Open Collective](https://opencollective.com/http-response-status-code)
 
 You can also use the following:
 

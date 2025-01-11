@@ -1,6 +1,6 @@
 {
   "name": "http-response-status-code",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Package include all Official HTTP Status Codes",
   "main": "index.js",
   "types": "index.d.ts",
@@ -17,7 +17,9 @@
     "Http",
     "Response",
     "Status",
-    "Codes"
+    "Codes",
+    "Https",
+    "skillnter"
   ],
   "author": "Himanshu Bansal <skillhimanshubansal@gmail.com>",
   "license": "MIT",
@@ -35,5 +37,36 @@
   },
   "publishConfig": {
     "@skillnter:registry": "https://npm.pkg.github.com/"
-  }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "utils/index.js",
+    "utils/index.d.ts",
+    "CODE_OF_CONDUCT.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/Skillnter"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/skillnter"
+    },
+    {
+      "type": "open_collective",
+      "url": "https://opencollective.com/http-response-status-code"
+    },
+    {
+      "type": "buy_me_a_coffee",
+      "url": "https://buymeacoffee.com/skillnter"
+    },
+    {
+      "type": "paypal",
+      "url": "https://www.paypal.com/paypalme/skillnte"
+    }
+  ]
 }
