@@ -88,7 +88,7 @@ Returns the HTTP status code from status code name.
 
 #### Parameters
 
-- `name` (`String`): The name of the status code.
+- `name` (`String`): The name of the status code (e.g., `"IM_A_TEAPOT"`).
 
 #### Returns
 
@@ -108,7 +108,7 @@ Returns the HTTP status code name from status code.
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `418`).
 
 #### Returns
 
@@ -124,7 +124,7 @@ console.log(STATUS_CODES.getStatusName(418)); // "IM_A_TEAPOT"
 
 ### 3. Get Status Description
 
-Returns the status description from HTTP status code.
+Returns the status description from HTTP status code (e.g., `418`).
 
 #### Parameters
 
@@ -152,7 +152,7 @@ Determines whether the specified status code represents an informational status.
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is informational, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a informational status code (1xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isInformational])
@@ -188,7 +188,7 @@ Determines whether the specified status code represents a success status.
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is success status, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a successful response (2xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isSuccess])
@@ -214,9 +214,9 @@ var STATUS_CODES = require('http-response-status-code');
 console.log(STATUS_CODES.getSuccessCodes()); // [200, 201, ...]
 ```
 
-### 8. Redirectional Code Check
+### 8. Redirection Code Check
 
-Determines whether the specified status code represents a redirectional status.
+Determines whether the specified status code represents a redirection status.
 
 #### Parameters
 
@@ -224,7 +224,7 @@ Determines whether the specified status code represents a redirectional status.
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is redirectional status, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a redirection status code (3xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isRedirectional])
@@ -235,13 +235,13 @@ console.log(STATUS_CODES.isRedirectional(300)); // True
 console.log(STATUS_CODES.isRedirectional(100)); // False
 ```
 
-### 9. List Redirectional Codes
+### 9. List Redirection Codes
 
-Returns all the redirectional HTTP status codes.
+Returns all the redirection HTTP status codes.
 
 #### Returns
 
-- `result` (`number[]`): An array of all the redirectional HTTP status codes.
+- `result` (`number[]`): An array of all the redirection HTTP status codes.
 
 ### Example ([Stackblitz][getRedirectionalCodes])
 
@@ -260,7 +260,7 @@ Determines whether the specified status code represents a client side error stat
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is client side error status, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a client side error code (4xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isClientError])
@@ -296,7 +296,7 @@ Determines whether the specified status code represents a server side error stat
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is server side error status, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a server side error code (5xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isServerError])
@@ -332,7 +332,7 @@ Validates whether the provided status code is recognized as valid.
 
 #### Returns
 
-- `result` (`boolean`): True if the status code is valid status, false otherwise.
+- `result` (`boolean`): Returns `true` if the status code represents a valid status code (1xx, 2xx, ..., 5xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isValidStatusCode])
