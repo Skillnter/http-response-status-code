@@ -1,7 +1,7 @@
 {
   "name": "http-response-status-code",
   "version": "1.7.2",
-  "description": "Package include all Official HTTP Status Codes",
+  "description": "A lightweight utility for retrieving HTTP status codes, names, and descriptions. Easily validate, categorize, and manage HTTP responses with built-in methods for informational, success, redirection, client, and server error codes.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -43,8 +43,6 @@
     "index.d.ts",
     "utils/index.js",
     "utils/index.d.ts",
-    "CODE_OF_CONDUCT.md",
-    "README.md",
     "LICENSE"
   ],
   "funding": [
