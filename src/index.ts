@@ -336,7 +336,7 @@ export const REQUESTED_RANGE_NOT_SATISFIABLE =
 export const EXPECTATION_FAILED = HTTP_STATUS_MAPPINGS.EXPECTATION_FAILED.code;
 
 /**
- * HTTP status code for "I'm a teapot" (418).
+ * HTTP status code for "I'm a Teapot" (418).
  *
  * @constant {number}
  */
