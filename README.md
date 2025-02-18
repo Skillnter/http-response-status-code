@@ -10,6 +10,7 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen)
 ![npm](https://img.shields.io/npm/dy/http-response-status-code)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/http-response-status-code/1.7.4)](https://socket.dev/npm/package/http-response-status-code/overview/1.7.4)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?logo=github&logoColor=white)](https://skillnter.github.io/http-response-status-code/)
 [![Github Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-30363D?&logo=GitHub-Sponsors&logoColor=EA4AAA)](https://github.com/sponsors/Skillnter)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-3385FF?logo=open-collective&logoColor=white)](https://opencollective.com/http-response-status-code)
@@ -53,9 +54,17 @@ npm install http-response-status-code
 var STATUS_CODES = require('http-response-status-code');
 // OR
 import * as STATUS_CODES from 'http-response-status-code';
+// OR
+import { OK, getStatusName, CODES } from 'http-response-status-code';
 
 console.log(STATUS_CODES.getStatusName(STATUS_CODES.OK));
 // OK
+
+console.log(getStatusName(OK));
+// OK
+
+console.log(OK);
+// 200
 
 console.log(STATUS_CODES.getStatusDescription(STATUS_CODES.INTERNAL_SERVER_ERROR));
 // Internal Server Error
@@ -92,7 +101,7 @@ Returns the HTTP status code from status code name.
 
 #### Returns
 
-- `code` (`number`): The code number of the status if successful.
+- `code` (`number`): The code number of the status if code exists.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][getStatusCode])
@@ -104,7 +113,7 @@ console.log(STATUS_CODES.getStatusCode("IM_A_TEAPOT")); // 418
 
 ### 2. Get Status Name
 
-Returns the HTTP status code name from status code.
+Returns the HTTP status code name from status code (e.g., `418`).
 
 #### Parameters
 
@@ -112,7 +121,7 @@ Returns the HTTP status code name from status code.
 
 #### Returns
 
-- `name` (`String`): The name of the status code if successful.
+- `name` (`String`): The name of the status code if name exists.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][getStatusName])
@@ -128,11 +137,11 @@ Returns the status description from HTTP status code (e.g., `418`).
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `418`).
 
 #### Returns
 
-- `name` (`String`): The description of the status code if successful.
+- `name` (`String`): The description of the status code if code exists.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][getStatusDescription])
@@ -148,11 +157,11 @@ Determines whether the specified status code represents an informational status.
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `100`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a informational status code (1xx), otherwise returns `false`.
+- `isInformational` (`boolean`): Returns `true` if the status code represents a informational status code (1xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isInformational])
@@ -165,7 +174,7 @@ console.log(STATUS_CODES.isInformational(200)); // False
 
 ### 5. List Informational Codes
 
-Returns all the informational HTTP status codes.
+Provides a list of all the informational HTTP status codes.
 
 #### Returns
 
@@ -184,11 +193,11 @@ Determines whether the specified status code represents a success status.
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `200`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a successful response (2xx), otherwise returns `false`.
+- `isSuccess` (`boolean`): Returns `true` if the status code represents a success status code (2xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isSuccess])
@@ -201,7 +210,7 @@ console.log(STATUS_CODES.isSuccess(100)); // False
 
 ### 7. List Success Codes
 
-Returns all the success HTTP status codes.
+Provides a list of all the success HTTP status codes.
 
 #### Returns
 
@@ -220,11 +229,11 @@ Determines whether the specified status code represents a redirection status.
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `300`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a redirection status code (3xx), otherwise returns `false`.
+- `isRedirectional` (`boolean`): Returns `true` if the status code represents a redirection status code (3xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isRedirectional])
@@ -237,7 +246,7 @@ console.log(STATUS_CODES.isRedirectional(100)); // False
 
 ### 9. List Redirection Codes
 
-Returns all the redirection HTTP status codes.
+Provides a list of all the redirection HTTP status codes.
 
 #### Returns
 
@@ -256,11 +265,11 @@ Determines whether the specified status code represents a client side error stat
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `400`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a client side error code (4xx), otherwise returns `false`.
+- `isClientError` (`boolean`): Returns `true` if the status code represents a client side error code (4xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isClientError])
@@ -273,7 +282,7 @@ console.log(STATUS_CODES.isClientError(100)); // False
 
 ### 11. List Client Side Error Codes
 
-Returns all the client side error HTTP status codes.
+Provides a list of all the client side error HTTP status codes.
 
 #### Returns
 
@@ -292,11 +301,11 @@ Determines whether the specified status code represents a server side error stat
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `500`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a server side error code (5xx), otherwise returns `false`.
+- `isServerError` (`boolean`): Returns `true` if the status code represents a server side error code (5xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isServerError])
@@ -309,7 +318,7 @@ console.log(STATUS_CODES.isServerError(100)); // False
 
 ### 13. List Server Side Error Codes
 
-Returns all the server side error HTTP status codes.
+Provides a list of all the server side error HTTP status codes.
 
 #### Returns
 
@@ -328,11 +337,11 @@ Validates whether the provided status code is recognized as valid.
 
 #### Parameters
 
-- `code` (`number`): The code number of the status.
+- `code` (`number`): The code number of the status (e.g., `500`).
 
 #### Returns
 
-- `result` (`boolean`): Returns `true` if the status code represents a valid status code (1xx, 2xx, ..., 5xx), otherwise returns `false`.
+- `isValidStatusCode` (`boolean`): Returns `true` if the status code represents a valid status code (1xx, 2xx, ..., 5xx), otherwise returns `false`.
 - `Error`: An error object if something goes wrong, containing details about the issue.
 
 ### Example ([Stackblitz][isValidStatusCode])
@@ -368,6 +377,7 @@ console.log(STATUS_CODES.isValidStatusCode(999)); // False
 |  303   | HTTP_CODE_303 | SEE_OTHER                       | See Other
 |  304   | HTTP_CODE_304 | NOT_MODIFIED                    | Not Modified
 |  305   | HTTP_CODE_305 | USE_PROXY                       | Use Proxy
+|  306   | HTTP_CODE_306 | SWITCH_PROXY                    | Switch Proxy
 |  307   | HTTP_CODE_307 | TEMPORARY_REDIRECT              | Temporary Redirect
 |  308   | HTTP_CODE_308 | PERMANENT_REDIRECT              | Permanent Redirect
 |  400   | HTTP_CODE_400 | BAD_REQUEST                     | Bad Request

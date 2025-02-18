@@ -1,5 +1,6 @@
 var assert = require("assert");
-var STATUS_CODES = require("../index.js");
+import { HTTP_STATUS_CODES } from "../src/constants";
+import * as STATUS_CODES from "../src/index";
 describe("status_code", function () {
     it("Should print status code", function () {
         var result = STATUS_CODES.OK;
@@ -67,9 +68,9 @@ describe("status_code", function () {
         var result = STATUS_CODES.isInformational(200);
         assert.equal(result, false);
     });
-    it("Should throw error when isInformational get code as 'CODES'", function () {
+    it("Should throw error when isInformational get code as 999", function () {
         assert.throws(() => {
-            STATUS_CODES.isInformational("CODES");
+            STATUS_CODES.isInformational(999);
         }, Error);
     });
     it("Should print true when isSuccess get code as 200", function () {
@@ -80,9 +81,9 @@ describe("status_code", function () {
         var result = STATUS_CODES.isSuccess(300);
         assert.equal(result, false);
     });
-    it("Should throw error when isSuccess get code as 'CODES'", function () {
+    it("Should throw error when isSuccess get code as 999", function () {
         assert.throws(() => {
-            STATUS_CODES.isSuccess("CODES");
+            STATUS_CODES.isSuccess(999);
         }, Error);
     });
     it("Should print true when isRedirectional get code as 300", function () {
@@ -93,9 +94,9 @@ describe("status_code", function () {
         var result = STATUS_CODES.isRedirectional(400);
         assert.equal(result, false);
     });
-    it("Should throw error when isRedirectional get code as 'CODES'", function () {
+    it("Should throw error when isRedirectional get code as 999", function () {
         assert.throws(() => {
-            STATUS_CODES.isRedirectional("CODES");
+            STATUS_CODES.isRedirectional(999);
         }, Error);
     });
     it("Should print true when isClientError get code as 400", function () {
@@ -106,9 +107,9 @@ describe("status_code", function () {
         var result = STATUS_CODES.isClientError(500);
         assert.equal(result, false);
     });
-    it("Should throw error when isClientError get code as 'CODES'", function () {
+    it("Should throw error when isClientError get code as 999", function () {
         assert.throws(() => {
-            STATUS_CODES.isClientError("CODES");
+            STATUS_CODES.isClientError(999);
         }, Error);
     });
     it("Should print true when isServerError get code as 500", function () {
@@ -119,9 +120,9 @@ describe("status_code", function () {
         var result = STATUS_CODES.isServerError(200);
         assert.equal(result, false);
     });
-    it("Should throw error when isServerError get code as 'CODES'", function () {
+    it("Should throw error when isServerError get code as 999", function () {
         assert.throws(() => {
-            STATUS_CODES.isServerError("CODES");
+            STATUS_CODES.isServerError(999);
         }, Error);
     });
     it("Should return informational status list", function () {
@@ -178,5 +179,11 @@ describe("status_code", function () {
     it("Should print true when isValidStatusCode get code as 200", function () {
         var result = STATUS_CODES.isValidStatusCode(200);
         assert.equal(result, true);
+    });
+    it("Should have all status code names as exported members", function () {
+        for (let [name] of Object.entries(HTTP_STATUS_CODES)) {
+            expect((STATUS_CODES as Record<string, any>)[name]).toBeDefined();
+        }
+        console.log(STATUS_CODES.OK);
     });
 });
