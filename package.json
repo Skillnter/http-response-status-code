@@ -47,6 +47,8 @@
         "dist/utils/index.d.ts",
         "dist/utils/lists/index.js",
         "dist/utils/lists/index.d.ts",
+        "dist/utils/mappers/index.js",
+        "dist/utils/mappers/index.d.ts",
         "dist/utils/status/index.js",
         "dist/utils/status/index.d.ts",
         "dist/utils/validators/index.js",
