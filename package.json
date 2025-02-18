@@ -1,6 +1,6 @@
 {
     "name": "http-response-status-code",
-    "version": "1.7.3",
+    "version": "1.7.4",
     "description": "A lightweight utility for retrieving HTTP status codes, names, and descriptions. Easily validate, categorize, and manage HTTP responses with built-in methods for informational, success, redirection, client, and server error codes.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
