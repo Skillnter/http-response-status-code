@@ -12,7 +12,7 @@ import { ClassLimits, CODES } from "../../constants";
  * console.log(STATUS_CODES.isInformational(100)); // True
  * console.log(STATUS_CODES.isInformational(200)); // False
  */
-export function isInformational(code: number): boolean | Error {
+export function isInformational(code: number): boolean {
     if (Object.prototype.hasOwnProperty.call(CODES, code)) {
         return (
             code <= ClassLimits.Informational.MAX &&
@@ -34,7 +34,7 @@ export function isInformational(code: number): boolean | Error {
  * console.log(STATUS_CODES.isSuccess(200)); // True
  * console.log(STATUS_CODES.isSuccess(100)); // False
  */
-export function isSuccess(code: number) {
+export function isSuccess(code: number): boolean {
     if (Object.prototype.hasOwnProperty.call(CODES, code)) {
         return (
             code <= ClassLimits.Success.MAX && code >= ClassLimits.Success.MIN
@@ -55,7 +55,7 @@ export function isSuccess(code: number) {
  * console.log(STATUS_CODES.isRedirectional(300)); // True
  * console.log(STATUS_CODES.isRedirectional(100)); // False
  */
-export function isRedirectional(code: number) {
+export function isRedirectional(code: number): boolean {
     if (Object.prototype.hasOwnProperty.call(CODES, code)) {
         return (
             code <= ClassLimits.Redirectional.MAX &&
@@ -77,7 +77,7 @@ export function isRedirectional(code: number) {
  * console.log(STATUS_CODES.isClientError(400)); // True
  * console.log(STATUS_CODES.isClientError(100)); // False
  */
-export function isClientError(code: number) {
+export function isClientError(code: number): boolean {
     if (Object.prototype.hasOwnProperty.call(CODES, code)) {
         return (
             code <= ClassLimits.ClientError.MAX &&
@@ -99,7 +99,7 @@ export function isClientError(code: number) {
  * console.log(STATUS_CODES.isServerError(500)); // True
  * console.log(STATUS_CODES.isServerError(100)); // False
  */
-export function isServerError(code: number) {
+export function isServerError(code: number): boolean {
     if (Object.prototype.hasOwnProperty.call(CODES, code)) {
         return (
             code <= ClassLimits.ServerError.MAX &&
@@ -121,6 +121,6 @@ export function isServerError(code: number) {
  * console.log(STATUS_CODES.isValidStatusCode(500)); // True
  * console.log(STATUS_CODES.isValidStatusCode(999)); // False
  */
-export function isValidStatusCode(code: number) {
+export function isValidStatusCode(code: number): boolean {
     return Object.prototype.hasOwnProperty.call(CODES, code);
 }

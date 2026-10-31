@@ -15,7 +15,7 @@ import {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getStatusCode("IM_A_TEAPOT")); // 418
  */
-export function getStatusCode(name: string): number | Error {
+export function getStatusCode(name: string): number {
     if (Object.prototype.hasOwnProperty.call(HTTP_STATUS_CODES, `${name}`)) {
         return HTTP_STATUS_CODES[name];
     }
@@ -33,7 +33,7 @@ export function getStatusCode(name: string): number | Error {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getStatusName(418)); // "IM_A_TEAPOT"
  */
-export function getStatusName(code: number): string | Error {
+export function getStatusName(code: number): string {
     if (Object.prototype.hasOwnProperty.call(HTTP_STATUS_NAMES, code)) {
         return HTTP_STATUS_NAMES[code];
     }
@@ -51,7 +51,7 @@ export function getStatusName(code: number): string | Error {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getStatusDescription(500)); // "Internal Server Error"
  */
-export function getStatusDescription(code: number): string | Error {
+export function getStatusDescription(code: number): string {
     if (Object.prototype.hasOwnProperty.call(HTTP_STATUS_DESCRIPTION, code)) {
         return HTTP_STATUS_DESCRIPTION[code];
     }

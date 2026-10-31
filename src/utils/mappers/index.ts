@@ -1,7 +1,6 @@
 import { CODES } from "../../constants";
 import {
     IClassLimits,
-    ICodeList,
     IHttpStatusCodes,
     IHttpStatusDescriptions,
     IHttpStatusMappings,
@@ -68,15 +67,15 @@ export function mapCodesToDescriptions(
  * @param {IClassLimits} classLimits - The class limits for HTTP status codes.
  * @param {typeof CODES} codesEnum - The enumeration of HTTP status codes.
  * @param {string} type - The type of HTTP status code to list.
- * @returns {(ICodeList | Error)} A list of HTTP status codes for the given type, or an error if the type does not exist.
- * @type {Object<number, string>}
+ * @returns {number[]} A list of HTTP status codes for the given type.
+ * @throws {Error} An error if the type does not exist.
  */
 export function listCodes(
     classLimits: IClassLimits,
     codesEnum: typeof CODES,
     type: string
-): ICodeList | Error {
-    const codes = [];
+): number[] {
+    const codes: number[] = [];
     if (Object.prototype.hasOwnProperty.call(classLimits, type)) {
         for (
             let code = classLimits[type].MIN;
@@ -87,7 +86,7 @@ export function listCodes(
                 codes.push(code);
             }
         }
-        return Object.freeze(codes);
+        return Object.freeze(codes) as number[];
     }
     throw new Error(`Type of HTTP status does not exist: ${type}`);
 }
