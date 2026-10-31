@@ -3,6 +3,7 @@ import {
     getStatusCode,
     getStatusName,
     getStatusDescription,
+    toResponseInit,
     isInformational,
     isSuccess,
     isRedirectional,
@@ -15,12 +16,14 @@ import {
     getServerErrorCodes,
     isValidStatusCode,
 } from "./utils";
+import { IResponseInit } from "./interfaces";
 
 export {
     CODES,
     getStatusCode,
     getStatusName,
     getStatusDescription,
+    toResponseInit,
     isInformational,
     isSuccess,
     isRedirectional,
@@ -32,6 +35,7 @@ export {
     getClientErrorCodes,
     getServerErrorCodes,
     isValidStatusCode,
+    IResponseInit,
 };
 
 /**

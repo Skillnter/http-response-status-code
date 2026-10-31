@@ -1,4 +1,5 @@
 import { getStatusCode, getStatusName, getStatusDescription } from "./status";
+import { toResponseInit } from "./response";
 import {
     isInformational,
     isSuccess,
@@ -19,6 +20,7 @@ export {
     getStatusCode,
     getStatusName,
     getStatusDescription,
+    toResponseInit,
     isInformational,
     isSuccess,
     isRedirectional,

@@ -5,6 +5,7 @@ import {
     IHttpStatusNames,
     IHttpStatusDescriptions,
     ICodeList,
+    IResponseInit,
 } from "./http-status-codes.interface";
 
 export {
@@ -16,4 +17,6 @@ export {
     IHttpStatusDescriptions,
     ICodeList,
     IClassType,
+    IResponseInit,
 };
+

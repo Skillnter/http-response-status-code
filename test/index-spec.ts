@@ -28,6 +28,7 @@ describe("status_code", function () {
             "getStatusCode",
             "getStatusName",
             "getStatusDescription",
+            "toResponseInit",
             "isInformational",
             "isSuccess",
             "isRedirectional",
@@ -180,9 +181,27 @@ describe("status_code", function () {
         var result = STATUS_CODES.isValidStatusCode(200);
         assert.equal(result, true);
     });
+    it("Should return ResponseInit compatible object via toResponseInit", function () {
+        var result = STATUS_CODES.toResponseInit(STATUS_CODES.OK);
+        assert.deepStrictEqual(result, {
+            status: 200,
+            statusText: "OK",
+        });
+    });
+    it("Should return ResponseInit compatible object with merged init via toResponseInit", function () {
+        var result = STATUS_CODES.toResponseInit(STATUS_CODES.OK, {
+            headers: { "Content-Type": "application/json" },
+        });
+        assert.deepStrictEqual(result, {
+            headers: { "Content-Type": "application/json" },
+            status: 200,
+            statusText: "OK",
+        });
+    });
     it("Should have all status code names as exported members", function () {
         for (let [name] of Object.entries(HTTP_STATUS_CODES)) {
             expect((STATUS_CODES as Record<string, any>)[name]).toBeDefined();
         }
     });
 });
+

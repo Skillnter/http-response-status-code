@@ -43,3 +43,15 @@ export interface IHttpStatusDescriptions {
  * Type representing a list of HTTP status codes.
  */
 export type ICodeList = number[];
+
+/**
+ * Interface representing a Web Standard ResponseInit compatible object.
+ * @interface IResponseInit
+ * @property {number} status - HTTP status code.
+ * @property {string} statusText - HTTP status description (status text).
+ */
+export interface IResponseInit {
+    status: number;
+    statusText: string;
+    [key: string]: any;
+}
