@@ -184,6 +184,5 @@ describe("status_code", function () {
         for (let [name] of Object.entries(HTTP_STATUS_CODES)) {
             expect((STATUS_CODES as Record<string, any>)[name]).toBeDefined();
         }
-        console.log(STATUS_CODES.OK);
     });
 });

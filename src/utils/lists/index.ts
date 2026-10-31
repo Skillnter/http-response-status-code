@@ -28,7 +28,7 @@ export function getInformationalCodes(): number[] {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getSuccessCodes()); // [200, 201, ...]
  */
-export function getSuccessCodes() {
+export function getSuccessCodes(): number[] {
     return SUCCESS_CODES as number[];
 }
 
@@ -41,7 +41,7 @@ export function getSuccessCodes() {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getRedirectionalCodes()); // [300, 301, ...]
  */
-export function getRedirectionalCodes() {
+export function getRedirectionalCodes(): number[] {
     return REDIRECTION_CODES as number[];
 }
 
@@ -54,7 +54,7 @@ export function getRedirectionalCodes() {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getClientErrorCodes()); // [400, 401, ...]
  */
-export function getClientErrorCodes() {
+export function getClientErrorCodes(): number[] {
     return CLIENT_ERROR_CODES as number[];
 }
 
@@ -67,6 +67,6 @@ export function getClientErrorCodes() {
  * var STATUS_CODES = require('http-response-status-code');
  * console.log(STATUS_CODES.getServerErrorCodes()); // [500, 501, ...]
  */
-export function getServerErrorCodes() {
+export function getServerErrorCodes(): number[] {
     return SERVER_ERROR_CODES as number[];
 }

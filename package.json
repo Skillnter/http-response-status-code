@@ -1,28 +1,32 @@
 {
     "name": "http-response-status-code",
-    "version": "1.7.5",
+    "version": "1.7.6",
     "description": "A lightweight utility for retrieving HTTP status codes, names, and descriptions. Easily validate, categorize, and manage HTTP responses with built-in methods for informational, success, redirection, client, and server error codes.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "jest --config jest.config.ts",
         "build": "tsc --build",
-        "coverage": "jest --coverage --config jest.config.ts"
+        "coverage": "jest --coverage --config jest.config.ts",
+        "lint": "eslint src/"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Skillnter/http-response-status-code.git"
     },
     "keywords": [
-        "Http",
-        "Response",
-        "Status",
-        "Codes",
-        "Https",
+        "http",
+        "response",
+        "status",
+        "codes",
+        "https",
         "skillnter"
     ],
     "author": "Himanshu Bansal <skillhimanshubansal@gmail.com>",
     "license": "MIT",
+    "engines": {
+        "node": ">=16"
+    },
     "bugs": {
         "url": "https://github.com/Skillnter/http-response-status-code/issues"
     },
@@ -30,33 +34,21 @@
     "devDependencies": {
         "@types/jest": "^29.5.14",
         "@types/node": "^22.13.4",
-        "@typescript-eslint/eslint-plugin": "^5.62.0",
-        "eslint-plugin-security": "^1.7.1",
+        "@typescript-eslint/eslint-plugin": "^8.22.0",
+        "@typescript-eslint/parser": "^8.22.0",
+        "eslint": "^8.57.0",
+        "eslint-plugin-security": "^3.0.1",
         "jest": "^29.7.0",
         "ts-jest": "^29.2.5",
         "ts-node": "^10.9.2",
-        "typescript": "^4.9.5"
+        "typescript": "^5.7.3"
     },
     "publishConfig": {
         "@skillnter:registry": "https://npm.pkg.github.com/"
     },
     "files": [
-        "dist/index.js",
-        "dist/index.d.ts",
-        "dist/utils/index.js",
-        "dist/utils/index.d.ts",
-        "dist/utils/lists/index.js",
-        "dist/utils/lists/index.d.ts",
-        "dist/utils/mappers/index.js",
-        "dist/utils/mappers/index.d.ts",
-        "dist/utils/status/index.js",
-        "dist/utils/status/index.d.ts",
-        "dist/utils/validators/index.js",
-        "dist/utils/validators/index.d.ts",
-        "dist/interfaces/*.js",
-        "dist/interfaces/*.d.ts",
-        "dist/constants/*.js",
-        "dist/constants/*.d.ts"
+        "dist/**/*.js",
+        "dist/**/*.d.ts"
     ],
     "funding": [
         {

@@ -40,11 +40,6 @@ export interface IHttpStatusDescriptions {
 }
 
 /**
- * Interface for a list of codes.
- * @interface ICodeList
- * @property {number} key - The key for the code.
- * @property {number} value - The value associated with the key.
+ * Type representing a list of HTTP status codes.
  */
-export interface ICodeList {
-    [key: number]: number;
-}
+export type ICodeList = number[];

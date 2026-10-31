@@ -2,7 +2,6 @@ import { CODES } from "./codes.constant";
 import { HTTP_STATUS_MAPPINGS } from "./http-status-codes.constant";
 import { ClassLimits, ClassTypes } from "./class-limit.constant";
 import {
-    ICodeList,
     IHttpStatusCodes,
     IHttpStatusDescriptions,
     IHttpStatusNames,
@@ -40,10 +39,10 @@ const HTTP_STATUS_DESCRIPTION: IHttpStatusDescriptions =
 
 /**
  * A List of all the informational HTTP status codes.
- * @constant {IHttpStatusDescriptions} INFORMATIONAL_CODES - A List of all the informational HTTP status codes.
+ * @constant {number[]} INFORMATIONAL_CODES - A List of all the informational HTTP status codes.
  * @type {number[]}
  */
-const INFORMATIONAL_CODES: ICodeList | Error = listCodes(
+const INFORMATIONAL_CODES: number[] = listCodes(
     ClassLimits,
     CODES,
     ClassTypes.INFORMATIONAL
@@ -51,10 +50,10 @@ const INFORMATIONAL_CODES: ICodeList | Error = listCodes(
 
 /**
  * A List of all the success HTTP status codes.
- * @constant {IHttpStatusDescriptions} SUCCESS_CODES - A List of all the success HTTP status codes.
+ * @constant {number[]} SUCCESS_CODES - A List of all the success HTTP status codes.
  * @type {number[]}
  */
-const SUCCESS_CODES: ICodeList | Error = listCodes(
+const SUCCESS_CODES: number[] = listCodes(
     ClassLimits,
     CODES,
     ClassTypes.SUCCESS
@@ -62,10 +61,10 @@ const SUCCESS_CODES: ICodeList | Error = listCodes(
 
 /**
  * A List of all the redirection HTTP status codes.
- * @constant {IHttpStatusDescriptions} REDIRECTION_CODES - A List of all the redirection HTTP status codes.
+ * @constant {number[]} REDIRECTION_CODES - A List of all the redirection HTTP status codes.
  * @type {number[]}
  */
-const REDIRECTION_CODES: ICodeList | Error = listCodes(
+const REDIRECTION_CODES: number[] = listCodes(
     ClassLimits,
     CODES,
     ClassTypes.REDIRECTION
@@ -73,10 +72,10 @@ const REDIRECTION_CODES: ICodeList | Error = listCodes(
 
 /**
  * A List of all the client side error HTTP status codes.
- * @constant {IHttpStatusDescriptions} CLIENT_SIDE_ERROR_CODES - A List of all the client side error HTTP status codes.
+ * @constant {number[]} CLIENT_ERROR_CODES - A List of all the client side error HTTP status codes.
  * @type {number[]}
  */
-const CLIENT_ERROR_CODES: ICodeList | Error = listCodes(
+const CLIENT_ERROR_CODES: number[] = listCodes(
     ClassLimits,
     CODES,
     ClassTypes.CLIENT_ERROR
@@ -84,10 +83,10 @@ const CLIENT_ERROR_CODES: ICodeList | Error = listCodes(
 
 /**
  * A List of all the server side error HTTP status codes.
- * @constant {IHttpStatusDescriptions} SERVER_ERROR_CODES - A List of all the server side error HTTP status codes.
+ * @constant {number[]} SERVER_ERROR_CODES - A List of all the server side error HTTP status codes.
  * @type {number[]}
  */
-const SERVER_ERROR_CODES: ICodeList | Error = listCodes(
+const SERVER_ERROR_CODES: number[] = listCodes(
     ClassLimits,
     CODES,
     ClassTypes.SERVER_ERROR

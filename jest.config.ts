@@ -9,7 +9,7 @@ const config: Config = {
     coverageDirectory: "coverage",
     moduleFileExtensions: ["ts", "tsx", "js"],
     verbose: true,
-    collectCoverageFrom: ["src/**/*.ts", "!src/index.ts"],
+    collectCoverageFrom: ["src/**/*.ts"],
 };
 
 export default config;

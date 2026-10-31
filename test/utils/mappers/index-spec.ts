@@ -7,7 +7,7 @@ import {
 } from "../../../src/utils/mappers";
 import * as Constants from "../../../src/constants";
 import { ClassTypes } from "../../../src/constants";
-describe.only("*** Lists ***", function () {
+describe("*** Lists ***", function () {
     describe("** mapCodesToNames **", function () {
         it("Should return HTTP_STATUS_NAMES", function () {
             var result = mapCodesToNames(Constants.HTTP_STATUS_MAPPINGS);
