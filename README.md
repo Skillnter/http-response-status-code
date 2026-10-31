@@ -4,13 +4,15 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/http-response-status-code/main.yml)
 [![npm version](https://img.shields.io/npm/v/http-response-status-code?color=brightgreen)](https://www.npmjs.com/package/http-response-status-code)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://www.npmjs.com/package/http-response-status-code)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/http-response-status-code)](https://bundlephobia.com/package/http-response-status-code)
 [![GitHub license](https://img.shields.io/github/license/skillnter/http-response-status-code?color=brightgreen)](LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/http-response-status-code)](https://github.com/Skillnter/http-response-status-code/issues)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen)
 ![npm](https://img.shields.io/npm/dy/http-response-status-code)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/http-response-status-code/1.7.5)](https://socket.dev/npm/package/http-response-status-code/overview/1.7.5)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/http-response-status-code/1.8.0)](https://socket.dev/npm/package/http-response-status-code/overview/1.8.0)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?logo=github&logoColor=white)](https://skillnter.github.io/http-response-status-code/)
 [![Github Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-30363D?&logo=GitHub-Sponsors&logoColor=EA4AAA)](https://github.com/sponsors/Skillnter)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-3385FF?logo=open-collective&logoColor=white)](https://opencollective.com/http-response-status-code)
@@ -18,10 +20,21 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
 [![Patreon](https://img.shields.io/badge/Patreon-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/skillnter)
 [![PayPal](https://img.shields.io/badge/PayPal-003087?logo=paypal&logoColor=fff)](https://www.paypal.me/skillnte)
 
+## Features
+
+- **Zero Dependencies**: Pure, lightweight utility with 0 external runtime dependencies.
+- **Web Standard & Fetch API Ready**: Native `toResponseInit` helper compatible with standard `ResponseInit` (Next.js, Remix, Cloudflare Workers, Hono, Bun, Deno).
+- **100% Test Coverage**: Thoroughly tested across all status codes, mappings, and boundary cases.
+- **Tree-Shakeable**: Import only what you use with zero extra bloat in your bundle.
+- **TypeScript First**: Full, accurate TypeScript definitions and autocomplete out of the box.
+- **Comprehensive Toolset**: Retrieve codes, names, reason phrases, category validators (`isSuccess`, `isClientError`, etc.), and categorized code lists.
+
 ## Table of Content
 
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage-example)
+- [Framework Integration](#framework-integration)
 - [Toolset Overview](#toolset-overview)
   - [1. Get Status Code](#1-get-status-code)
   - [2. Get Status Name](#2-get-status-name)
@@ -37,6 +50,7 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
   - [12. Server Error Code Check](#12-server-error-code-check)
   - [13. List Server Side Error Codes](#13-list-server-side-error-codes)
   - [14. Valid Code Check](#14-valid-code-check)
+  - [15. Web Standard Response Object Helper](#15-web-standard-response-object-helper)
 - [Status Codes](#status-codes)
 - [People](#people)
 - [Donations](#donations)
@@ -87,6 +101,49 @@ res.status(STATUS_CODES.CODES.HTTP_CODE_400).send(STATUS_CODES.getStatusDescript
 res.status(STATUS_CODES.getStatusCode("NOT_FOUND")).sendFile('/absolute/path/to/404.png');
 // OR
 res.status(STATUS_CODES.CODES.HTTP_CODE_404).sendFile('/absolute/path/to/404.png');
+
+console.log(STATUS_CODES.toResponseInit(STATUS_CODES.OK));
+// { status: 200, statusText: "OK" }
+
+// In Fetch API / Web Standard environments (e.g., Cloudflare Workers, Next.js, Hono, Node 18+)
+new Response("Hello World", STATUS_CODES.toResponseInit(STATUS_CODES.OK));
+```
+
+## Framework Integration
+
+Easily integrate `http-response-status-code` across modern web runtimes and backend frameworks:
+
+### Next.js (App Router Route Handlers)
+
+```typescript
+import { OK, NOT_FOUND, toResponseInit } from "http-response-status-code";
+
+export async function GET() {
+    return Response.json({ message: "Hello World" }, toResponseInit(OK));
+}
+```
+
+### Hono / Cloudflare Workers
+
+```typescript
+import { Hono } from "hono";
+import { OK, toResponseInit } from "http-response-status-code";
+
+const app = new Hono();
+
+app.get("/", (c) => {
+    return c.newResponse("All good", toResponseInit(OK));
+});
+```
+
+### Express / Fastify
+
+```javascript
+const { BAD_REQUEST, getStatusDescription } = require("http-response-status-code");
+
+app.get("/api", (req, res) => {
+    res.status(BAD_REQUEST).send(getStatusDescription(BAD_REQUEST));
+});
 ```
 
 ## Toolset Overview
@@ -352,6 +409,31 @@ console.log(STATUS_CODES.isValidStatusCode(500)); // True
 console.log(STATUS_CODES.isValidStatusCode(999)); // False
 ```
 
+### 15. Web Standard Response Object Helper
+
+Returns an object compatible with the Fetch API `ResponseInit` (`{ status: number, statusText: string }`).
+
+#### Parameters
+
+- `code` (`number | string`): The code number of the status (e.g., `200` or `OK`) or status name (e.g., `"OK"`).
+- `init` (`Record<string, any>`, optional): Additional properties to merge (e.g., `headers`, custom `statusText`).
+
+#### Returns
+
+- `result` (`IResponseInit`): An object containing `status` and `statusText`, merged with any extra options provided.
+- `Error`: An error object if something goes wrong, containing details about the issue.
+
+### Example ([Stackblitz][toResponseInit])
+
+```javascript
+var STATUS_CODES = require('http-response-status-code');
+console.log(STATUS_CODES.toResponseInit(STATUS_CODES.OK));
+// { status: 200, statusText: "OK" }
+
+console.log(STATUS_CODES.toResponseInit(STATUS_CODES.NOT_FOUND, { headers: { "Content-Type": "application/json" } }));
+// { headers: { "Content-Type": "application/json" }, status: 404, statusText: "Not Found" }
+```
+
 ## Status Codes
 
 |  Code  |     Enum      | Name                            | Description
@@ -439,9 +521,11 @@ The original author of the project is [Himanshu Bansal][skillnter]
 
 You can also use the following:
 
-![BTC: qzqmpxux3m56qqhz465u8022q9z63w2sysq4u9ltwj](https://img.shields.io/badge/BTC-qzqmpxux3m56qqhz465u8022q9z63w2sysq4u9ltwj-brightgreen)
+![BTC: bc1p22h4nsad5d8ketyhuvf0vyva6unttxwzzqvkty5r839as0mlclgs72d3mf](https://img.shields.io/badge/BTC-bc1p22h4nsad5d8ketyhuvf0vyva6unttxwzzqvkty5r839as0mlclgs72d3mf-brightgreen)
 
 ![ETH: 0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889](https://img.shields.io/badge/ETH-0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889-brightgreen)
+
+![BNB: 0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889](https://img.shields.io/badge/BNB-0x1D59a291391a3CE17C63D5dC50F258Dc0Ab62889-brightgreen)
 
 ## License
 
@@ -463,3 +547,4 @@ You can also use the following:
 [isServerError]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL82
 [getServerErrorCodes]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL93
 [isValidStatusCode]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL98
+[toResponseInit]: https://stackblitz.com/edit/http-response-status-code?file=index.js%3AL104
