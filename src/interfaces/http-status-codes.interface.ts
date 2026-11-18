@@ -46,9 +46,20 @@ export type ICodeList = number[];
 
 /**
  * Interface representing a Web Standard ResponseInit compatible object.
+ *
  * @interface IResponseInit
  * @property {number} status - HTTP status code.
  * @property {string} statusText - HTTP status description (status text).
+ *
+ * @example
+ * ```typescript
+ * import { toResponseInit, IResponseInit, NOT_FOUND } from "http-response-status-code";
+ *
+ * const init: IResponseInit = toResponseInit(NOT_FOUND, {
+ *   headers: { "Content-Type": "application/json" }
+ * });
+ * return new Response(JSON.stringify({ error: "Not Found" }), init);
+ * ```
  */
 export interface IResponseInit {
     status: number;

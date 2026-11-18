@@ -12,7 +12,7 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d55170d359c475e9e586fd00e00841e)](https://app.codacy.com/gh/Skillnter/http-response-status-code/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/http-response-status-code?color=brightgreen)
 ![npm](https://img.shields.io/npm/dy/http-response-status-code)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/http-response-status-code/1.8.0)](https://socket.dev/npm/package/http-response-status-code/overview/1.8.0)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/http-response-status-code/1.9.0)](https://socket.dev/npm/package/http-response-status-code/overview/1.9.0)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?logo=github&logoColor=white)](https://skillnter.github.io/http-response-status-code/)
 [![Github Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-30363D?&logo=GitHub-Sponsors&logoColor=EA4AAA)](https://github.com/sponsors/Skillnter)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-3385FF?logo=open-collective&logoColor=white)](https://opencollective.com/http-response-status-code)
@@ -35,6 +35,7 @@ All HTTP Status Codes from [Wikipedia - List of HTTP status codes](https://en.wi
 - [Installation](#installation)
 - [Usage](#usage-example)
 - [Framework Integration](#framework-integration)
+- [AI Agent Integration](#ai-agent-integration)
 - [Toolset Overview](#toolset-overview)
   - [1. Get Status Code](#1-get-status-code)
   - [2. Get Status Name](#2-get-status-name)
@@ -145,6 +146,19 @@ app.get("/api", (req, res) => {
     res.status(BAD_REQUEST).send(getStatusDescription(BAD_REQUEST));
 });
 ```
+
+## AI Agent Integration
+
+When building with AI coding assistants (Claude Code, Cursor, GitHub Copilot, Antigravity, Devin), add this instruction to your project's `.cursorrules`, `.github/copilot-instructions.md`, or system prompt:
+
+```markdown
+### HTTP Status Code Rule
+- Always import named status code constants from `http-response-status-code` instead of hardcoding numeric literals (e.g., `import { OK, NOT_FOUND, BAD_REQUEST } from "http-response-status-code"`).
+- For Fetch API, Next.js App Router, Hono, or Cloudflare Workers responses, use `toResponseInit(STATUS_CODE, { headers })`.
+- Use category validators (`isClientError(code)`, `isServerError(code)`) rather than manual numeric range checks.
+```
+
+Machine-readable instructions are also available in [llms.txt](llms.txt).
 
 ## Toolset Overview
 
