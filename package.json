@@ -1,6 +1,6 @@
 {
     "name": "http-response-status-code",
-    "version": "1.8.0",
+    "version": "1.9.0",
     "description": "Zero-dependency HTTP status code utility with names, reason phrases, validators, and modern Fetch / Web Standard response helpers for TypeScript & JavaScript.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -38,6 +38,14 @@
         "rest-api",
         "typescript",
         "zero-dependency",
+        "rfc-9110",
+        "structured-errors",
+        "api-error-response",
+        "ai-agent",
+        "agent-skill",
+        "antigravity",
+        "cursor",
+        "copilot",
         "cloudflare-workers",
         "nextjs",
         "hono",
@@ -71,7 +79,9 @@
     },
     "files": [
         "dist/**/*.js",
-        "dist/**/*.d.ts"
+        "dist/**/*.d.ts",
+        "llms.txt",
+        "LICENSE"
     ],
     "funding": [
         {

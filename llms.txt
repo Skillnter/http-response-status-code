@@ -1,0 +1,78 @@
+# http-response-status-code
+
+> Zero-dependency HTTP status code utility with names, reason phrases, validators, and Fetch / Web Standard response helpers for TypeScript & JavaScript.
+
+## Overview
+`http-response-status-code` provides typed constants for all RFC 9110 HTTP status codes, lookup helpers, category validators, and a `toResponseInit` helper compatible with the standard Fetch API `ResponseInit`.
+
+## Installation
+```bash
+npm install http-response-status-code
+```
+
+## Quick Start
+```typescript
+import {
+  OK,
+  CREATED,
+  BAD_REQUEST,
+  NOT_FOUND,
+  INTERNAL_SERVER_ERROR,
+  toResponseInit,
+  isClientError,
+  getStatusName,
+  getStatusDescription,
+} from "http-response-status-code";
+
+// Status code constants (typed numbers)
+console.log(OK); // 200
+console.log(NOT_FOUND); // 404
+
+// Fetch API / Web Standard ResponseInit helper
+const response = new Response(
+  JSON.stringify({ message: "Item created" }),
+  toResponseInit(CREATED, {
+    headers: { "Content-Type": "application/json" }
+  })
+);
+
+// Category validators
+isClientError(404); // true
+isClientError(200); // false
+
+// Lookups
+getStatusName(418); // "IM_A_TEAPOT"
+getStatusDescription(500); // "Internal Server Error"
+```
+
+## API Reference
+
+### Status Code Constants
+Every standard status code is exported as an uppercase named constant:
+- `OK` (200), `CREATED` (201), `ACCEPTED` (202), `NO_CONTENT` (204)
+- `MOVED_PERMANENTLY` (301), `FOUND` (302), `NOT_MODIFIED` (304)
+- `BAD_REQUEST` (400), `UNAUTHORIZED` (401), `FORBIDDEN` (403), `NOT_FOUND` (404), `CONFLICT` (409), `UNPROCESSABLE_ENTITY` (422), `TOO_MANY_REQUESTS` (429)
+- `INTERNAL_SERVER_ERROR` (500), `BAD_GATEWAY` (502), `SERVICE_UNAVAILABLE` (503), `GATEWAY_TIMEOUT` (504)
+
+### Web Standards Helper
+- `toResponseInit(code: number | string, init?: Record<string, unknown>): IResponseInit`
+  Returns an object `{ status, statusText, ...init }` ready to pass directly to `new Response(body, init)` in Next.js, Remix, Hono, Cloudflare Workers, Express, Fastify, etc.
+
+### Validators
+- `isInformational(code: number): boolean` (100–199)
+- `isSuccess(code: number): boolean` (200–299)
+- `isRedirectional(code: number): boolean` (300–399)
+- `isClientError(code: number): boolean` (400–499)
+- `isServerError(code: number): boolean` (500–599)
+- `isValidStatusCode(code: number): boolean`
+
+### Metadata Lookups
+- `getStatusCode(name: string): number` (e.g. `"NOT_FOUND"` -> 404)
+- `getStatusName(code: number): string` (e.g. 404 -> `"NOT_FOUND"`)
+- `getStatusDescription(code: number): string` (e.g. 404 -> `"Not Found"`)
+
+## Guidelines for AI Coding Agents
+1. Use named constants (e.g. `BAD_REQUEST`, `NOT_FOUND`) instead of magic numbers.
+2. When creating Web Standard responses, use `toResponseInit(STATUS_CODE, { headers })`.
+3. Use `isClientError(status)` or `isServerError(status)` to branch error handling logic cleanly.
+
